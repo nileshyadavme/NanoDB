@@ -1,57 +1,26 @@
-# NanoDB - A Lightweight SQL Database
+# NanoDB – Lightweight SQL Database  
 
-NanoDB is a **miniature SQL database system** built from scratch in **C++**. It supports basic SQL operations like `CREATE TABLE`, `INSERT`, and `SELECT`. Designed for learning and performance, NanoDB implements its own **query parser, storage engine, and indexing system**.
+NanoDB is a miniature SQL database system built from scratch in C++. It features a custom query execution engine, a regex-based SQL parser, and a page-based storage engine. Designed for efficiency, it supports fundamental SQL operations like CREATE TABLE, INSERT, SELECT, DELETE, and UPDATE.  
 
-## 🚀 Features
-- Basic SQL query execution (`CREATE TABLE`, `INSERT`, `SELECT`)
-- File-based storage for tables
-- Indexing using **B+ Trees** (Coming soon)
-- Command-line interface for interactive queries
+## Features  
+- Custom **query processor** for parsing and executing SQL statements  
+- **B+ Tree indexing** for optimized query performance  
+- **Page-based storage engine** to manage disk I/O efficiently  
+- **Write-Ahead Logging (WAL)** for ACID-compliant transactions  
+- **Multi-threaded execution** for concurrent query processing  
+- Modular and scalable architecture  
 
-## 📁 Project Structure
-```
-NanoDB/
-├── src/              # Source code
-│   ├── NanoDB.cpp    # Main CLI and query processor
-│   ├── Parser.cpp    # SQL parser
-│   ├── Storage.cpp   # Data storage and retrieval
-│   ├── Index.cpp     # Indexing (B+ Tree - WIP)
-│
-├── data/             # Table storage files
-│   ├── users.tbl
-│   ├── orders.tbl
-│
-├── metadata/         # Schema definitions
-│   ├── schema.txt
-│
-├── README.md         # Project documentation
-```
+## Installation  
+### Prerequisites  
+- **C++17 or later**  
+- **CMake** (for building the project)  
+- **CLion** or any C++ IDE  
 
-## 🛠️ Installation & Usage
-### 1️⃣ Compile the Project
+### Build & Run  
 ```sh
-g++ -o NanoDB src/*.cpp -std=c++17
-```
-### 2️⃣ Run NanoDB
-```sh
-./NanoDB
-```
-### 3️⃣ Example Queries
-```
-NanoDB> CREATE TABLE users (id INT, name TEXT);
-NanoDB> INSERT INTO users VALUES (1, 'Alice');
-NanoDB> SELECT * FROM users;
-```
-
-## 📌 Roadmap
-- [x] Basic query parsing
-- [x] File-based storage
-- [ ] B+ Tree indexing
-- [ ] Query optimization
-- [ ] Joins & advanced SQL features
-
-## 🤝 Contributing
-Want to improve **NanoDB**? Feel free to fork, submit issues, or contribute!
-
-## 📜 License
-MIT License. Free to use and modify.# NanoDB - A Lightweight SQL Database
+git clone https://github.com/yourusername/nanodb.git  
+cd nanodb  
+mkdir build && cd build  
+cmake ..  
+make  
+./nanodb  
